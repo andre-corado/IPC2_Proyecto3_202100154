@@ -1,3 +1,6 @@
+import json
+
+
 class Instancia:
     def __init__(self, id, idConfig, nombre, fechaInicio, estado, fechaFinal):
         self.id = id
@@ -16,3 +19,11 @@ class Instancia:
             "estado": self.estado,
             "fechaFinal": self.fechaFinal
         }
+
+    def agregarADB(self):
+        with open('DB.json') as f:
+            db = json.load(f)
+        instancias = db['instancias']
+        instancias.append(self.json())
+        with open('DB.json', 'w') as f:
+            json.dump(db, f, indent=2)

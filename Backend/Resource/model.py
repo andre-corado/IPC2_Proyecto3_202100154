@@ -19,7 +19,6 @@ class Recurso:
     def agregarADB(self):
         with open('DB.json') as f:
             db = json.load(f)
-            print(db)
         recursos = db['recursos']
         recursos.append(self.json())
         with open('DB.json', 'w') as f:
