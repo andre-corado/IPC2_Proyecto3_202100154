@@ -1,1 +1,58 @@
-{"recursos": [], "categorias": [], "configuraciones": [], "clientes": [], "instancias": []}
+{
+  "recursos": [
+    {
+      "id": "1",
+      "nombre": "hola",
+      "abreviatura": "a1",
+      "metrica": 10,
+      "tipo": "Hardware",
+      "valorXHora": 0.5
+    },
+    {
+      "id": "2",
+      "nombre": "hola",
+      "abreviatura": "a1",
+      "metrica": 10,
+      "tipo": "Hardware",
+      "valorXHora": 0.5
+    }
+  ],
+  "categorias": [
+    {
+      "id": "cat1",
+      "nombre": "Categor\u00eda 1",
+      "descripcion": "Una Categor\u00eda m\u00e1s y m\u00e1s. Gg",
+      "cargaTrabajo": "La carga de trabajo es bastante, detalles m\u00e1s adelante",
+      "configuraciones": [
+        {
+          "id": "config2"
+        }
+      ]
+    }
+  ],
+  "configuraciones": [
+    {
+      "id": "config2",
+      "idCategoria": "cat1",
+      "nombre": "Configuraci\u00f3n 1",
+      "descripcion": "Una Configuraci\u00f3n m\u00e1s y m\u00e1s. Gg",
+      "recursos": [
+        {
+          "id": "1"
+        }
+      ]
+    }
+  ],
+  "clientes": [
+    {
+      "nit": "5136523",
+      "nombre": "Juan",
+      "usuario": "5136523",
+      "clave": "Juan464",
+      "direccion": "Zona 12, Ciudad",
+      "correoElectronico": "sandre2002@gmail.com",
+      "instancias": []
+    }
+  ],
+  "instancias": []
+}

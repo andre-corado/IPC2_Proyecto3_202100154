@@ -1,12 +1,16 @@
+import random
+import json
+import Backend.DB as DB
+
+
 class Cliente:
-    def __init__(self, nit, nombre, usuario, clave, direccion, correoElectronico, listaInstancias):
-        self.nit = nit
-        self.nombre = nombre
-        self.usuario = usuario
-        self.clave = clave
-        self.direccion = direccion
-        self.correoElectronico = correoElectronico
-        self.listaInstancias = listaInstancias
+    def __init__(self, nit, nombre, direccion, correoElectronico):
+        self.nit = str(nit)
+        self.nombre = str(nombre)
+        self.usuario = self.nit
+        self.clave = self.nombre + str(random.randrange(1, 999))
+        self.direccion = str(direccion)
+        self.correoElectronico = str(correoElectronico)
         self.instancias = []
 
     def json(self):
@@ -19,3 +23,6 @@ class Cliente:
             "correoElectronico": self.correoElectronico,
             "instancias": self.instancias
         }
+
+    def agregarADB(self):
+        DB.agregaraDB(self.json(), 'clientes')

@@ -1,18 +1,15 @@
 import json
 from Backend.Configuration.model import Configuracion
+import Backend.DB
 
 
 class Categoria:
-    def __init__(self, id, nombre, descripcion, cargaTrabajo, listaConfiguraciones):
-        self.id = id
-        self.nombre = nombre
-        self.descripcion =descripcion
-        self.cargaTrabajo = cargaTrabajo
-        self.listaConfiguraciones = listaConfiguraciones
+    def __init__(self, id, nombre, descripcion, cargaTrabajo):
+        self.id = str(id)
+        self.nombre = str(nombre)
+        self.descripcion = str(descripcion)
+        self.cargaTrabajo = str(cargaTrabajo)
         self.configuraciones = []
-        for config in listaConfiguraciones:
-            conf = Configuracion(config['id'], config['nombre'], config['descripcion'], config['recursos'])
-            self.configuraciones.append(conf.json())
 
     def json(self):
         return {
@@ -22,3 +19,6 @@ class Categoria:
             "cargaTrabajo": self.cargaTrabajo,
             "configuraciones": self.configuraciones
         }
+
+    def agregarADB(self):
+        Backend.DB.agregaraDB(self.json(), 'categorias')

@@ -2,18 +2,20 @@ import json
 
 
 class Instancia:
-    def __init__(self, id, idConfig, nombre, fechaInicio, estado, fechaFinal):
-        self.id = id
-        self.idConfiguracion = idConfig
-        self.nombre = nombre
+    def __init__(self, id, idConfig, idCliente, nombre, fechaInicio, estado, fechaFinal=None):
+        self.id = str(id)
+        self.idConfiguracion = str(idConfig)
+        self.idCliente = str(idCliente)
+        self.nombre = str(nombre)
         self.fechaInicio = fechaInicio
-        self.estado = estado
+        self.estado = str(estado)
         self.fechaFinal = fechaFinal
 
     def json(self):
         return {
             "id": self.id,
             "idConfiguracion": self.idConfiguracion,
+            "idCliente": self.idCliente,
             "nombre": self.nombre,
             "fechaInicio": self.fechaInicio,
             "estado": self.estado,

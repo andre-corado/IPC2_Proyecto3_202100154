@@ -3,11 +3,11 @@ import json
 
 class Recurso:
     def __init__(self, id, nombre, abrev, metr, tipo, valorXhora):
-        self.id = id
-        self.nombre = nombre
-        self.abreviatura = abrev
+        self.id = str(id)
+        self.nombre = str(nombre)
+        self.abreviatura = str(abrev)
         self.metrica = metr
-        self.tipo = tipo
+        self.tipo = str(tipo)
         self.valorXHora = valorXhora
 
     def json(self):
